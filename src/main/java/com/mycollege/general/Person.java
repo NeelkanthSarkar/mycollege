@@ -1,6 +1,5 @@
 package com.mycollege.general;
 
-import com.mycollege.entity.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Person {
 
-     String id;
+     int id;
      String firstName;
      String middleName;
      String lastName;

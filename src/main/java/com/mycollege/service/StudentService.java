@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 
 public interface StudentService {
 
-    ResponseEntity<?> getAllStudents();
-    ResponseEntity<?> getOneStudentById(int id);
-    ResponseEntity<?> addANewStudent(AddStudentRequest addStudentRequest);
-    ResponseEntity<?> updateExistingStudentDetails(UpdateStudentRequest updateStudentRequest);
-    ResponseEntity<?> deleteExistingStudentById(int id);
+    ResponseEntity<Object> getAllStudents();
+    ResponseEntity<Object> getOneStudentById(int id);
+    ResponseEntity<Object> addANewStudent(AddStudentRequest addStudentRequest);
+    ResponseEntity<Object> updateExistingStudentDetails(UpdateStudentRequest updateStudentRequest);
+    ResponseEntity<Object> deleteExistingStudentById(int id);
 }

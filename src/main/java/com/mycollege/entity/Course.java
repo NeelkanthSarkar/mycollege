@@ -2,23 +2,20 @@ package com.mycollege.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@EqualsAndHashCode(callSuper = false)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "department")
-public class Department {
+@Document(collection = "course")
+public class Course {
 
     @Id
     private int id;
-
-    private String title;
-    private String description;
-    private int totalMember;
-    private String createdDate;
+    private String name;
+    private String duration;
+    private String price;
+    private String totalSemester;
 }

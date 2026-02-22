@@ -17,27 +17,27 @@ public class StudentController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<?> getAllStudents(){
-        return null;
+    public ResponseEntity<Object> getAllStudents(){
+        return studentService.getAllStudents();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getStudentById(String id){
-        return null;
+    public ResponseEntity<Object> getStudentById(@PathVariable Integer id){
+        return studentService.getOneStudentById(id);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addNewStudent(AddStudentRequest addStudentRequest){
+    public ResponseEntity<Object> addNewStudent(@RequestBody AddStudentRequest addStudentRequest){
         return null;
     }
 
     @PutMapping("/update")
-    public ResponseEntity<?> updateStudentDetails(UpdateStudentRequest updateStudentRequest){
+    public ResponseEntity<Object> updateStudentDetails(@RequestBody UpdateStudentRequest updateStudentRequest){
         return null;
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteStudentById(String id){
+    public ResponseEntity<Object> deleteStudentById(@PathVariable Integer id){
         return null;
     }
 }
