@@ -2,7 +2,11 @@ package com.mycollege.controller;
 
 import com.mycollege.dto.AddStudentRequest;
 import com.mycollege.dto.UpdateStudentRequest;
+import com.mycollege.exception.DatabaseException;
 import com.mycollege.service.StudentService;
+import com.mycollege.util.APIUtils;
+import io.micrometer.common.util.StringUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,13 +26,17 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getStudentById(@PathVariable Integer id){
+    public ResponseEntity<Object> getStudentById(@PathVariable String id){
+        if(StringUtils.isBlank(id)){
+            return new ResponseEntity<>(APIUtils.createFailureResponse(400,"StudentId cannot be null or empty"), HttpStatus.BAD_REQUEST);
+        }
         return studentService.getOneStudentById(id);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Object> addNewStudent(@RequestBody AddStudentRequest addStudentRequest){
-        return null;
+    public ResponseEntity<Object> addNewStudent(@RequestBody AddStudentRequest addStudentRequest) throws DatabaseException {
+
+        return studentService.addANewStudent(addStudentRequest);
     }
 
     @PutMapping("/update")

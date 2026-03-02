@@ -15,10 +15,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Department {
 
     @Id
-    private int id;
-
+    private String id;
     private String title;
     private String description;
-    private int totalMember;
+    private int totalMembers;
     private String createdDate;
+
+    public Department(String title, String description, int totalMembers, String createdDate) {
+        this.title = title;
+        this.description = description;
+        this.totalMembers = totalMembers;
+        this.createdDate = createdDate;
+    }
 }

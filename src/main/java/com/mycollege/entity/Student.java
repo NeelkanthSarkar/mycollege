@@ -14,9 +14,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "student")
 public class Student extends Person {
 
+    private String studentId;
     private String fatherName;
     private String motherName;
-    private int courseId;
+    private String courseId;
     private int enrollmentYear;
     private String status;
     private String batch;

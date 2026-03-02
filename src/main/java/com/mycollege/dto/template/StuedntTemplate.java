@@ -4,12 +4,13 @@ import com.mycollege.entity.Address;
 
 public interface StuedntTemplate {
 
-     int getId();
+     String getId();
+     String getStudentId();
      String getFirstName();
      String getMiddleName();
      String getLastName();
      int getAge();
-     int getAddressId();
+     String getAddressId();
 
      String getAddress1();
      String getAddress2();

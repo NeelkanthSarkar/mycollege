@@ -14,7 +14,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "lecturer")
 public class Lecturer extends Person {
 
-    private int courseId;
+    private String lecturerId;
+    private Integer courseId;
     private String lectureTiming;
-    private int designationId;
+    private Integer designationId;
 }

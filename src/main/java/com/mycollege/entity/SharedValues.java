@@ -13,7 +13,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class SharedValues {
 
     @Id
-    private int id;
+    private String id;
     private String value;
     private String group;
+
+    public SharedValues(String value,String group){
+        this.value = value;
+        this.group = group;
+    }
 }

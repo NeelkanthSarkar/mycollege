@@ -17,7 +17,7 @@ import java.util.List;
 public class College {
 
     @Id
-    private int id;
+    private String id;
 
     private String name;
     private String moto;

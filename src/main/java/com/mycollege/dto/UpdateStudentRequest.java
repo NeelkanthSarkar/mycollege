@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateStudentRequest extends Person {
+public class UpdateStudentRequest{
     
-    private String id;
+    private Integer id;
     private String firstName;
     private String middleName;
     private String lastName;
@@ -26,7 +26,7 @@ public class UpdateStudentRequest extends Person {
     private String country;
     private String pinCode;
     private String landMark;
-    private int courseId;
+    private String course;
     private String status;
     private String batch;
 

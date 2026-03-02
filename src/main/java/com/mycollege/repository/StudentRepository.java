@@ -20,7 +20,7 @@ public interface StudentRepository extends MongoRepository<Student,String> {
                           }
                         },
                         {
-                          $unwind:"courseDetails"
+                          $unwind:"$courseDetails"
                         },
                         {
                           $lookup:{
@@ -31,7 +31,7 @@ public interface StudentRepository extends MongoRepository<Student,String> {
                           }
                         },
                         {
-                          $unwind:"addressDetails"
+                          $unwind:"$addressDetails"
                         },
                         {
                           $lookup:{
@@ -42,7 +42,7 @@ public interface StudentRepository extends MongoRepository<Student,String> {
                           }
                         },
                         {
-                          $unwind:"roleDetails"
+                          $unwind:"$roleDetails"
                         },
                         {
                           $project{
@@ -75,4 +75,7 @@ public interface StudentRepository extends MongoRepository<Student,String> {
                         ])
                         """)
     Optional<StuedntTemplate> findStudentById(int id);
+
+    Optional<StuedntTemplate> findByStudentId(String id);
+
 }
